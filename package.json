@@ -1,6 +1,6 @@
 {
     "name": "wireui",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Livewire ui components with tailwind base style",
     "repository": "git@github.com:wireui/wireui.git",
     "author": "PH7-Jack <pedrolivertwd@gmail.com>",

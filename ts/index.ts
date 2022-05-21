@@ -8,7 +8,7 @@ import './browserSupport'
 import './components'
 import './global'
 
-export interface WireUi {
+export interface $WireUi {
   notify: Notify
   confirmNotification: Confirm
   confirmAction: ShowConfirmDialog
@@ -17,10 +17,18 @@ export interface WireUi {
   dataGet: DataGet
 }
 
+export interface WireUI extends WireUiHooks {
+  colors: {
+    [key: string]: {
+      [key: string]: string
+    }
+  }
+}
+
 declare global {
   interface Window {
-    $wireui: WireUi
-    Wireui: WireUiHooks
+    $wireui: $WireUi
+    Wireui: WireUI
     Livewire: any
     Alpine: Alpine
     $openModal: CallableFunction

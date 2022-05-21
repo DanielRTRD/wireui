@@ -20,14 +20,14 @@ class WireUiBladeDirectives
     public function hooksScript(): string
     {
         $scripts = <<<JS
-            window.Wireui = {
+            window.Wireui = Object.assign({
                 hook(hook, callback) {
                     window.addEventListener(`wireui:\${hook}`, () => callback())
                 },
                 dispatchHook(hook) {
                     window.dispatchEvent(new Event(`wireui:\${hook}`))
                 }
-            }
+            }, window.Wireui)
         JS;
 
         return Minify::execute($scripts);
